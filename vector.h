@@ -3,7 +3,7 @@
 struct vec
 {
     unsigned int size;
-	unsigned int capacity;
+    unsigned int capacity;
     unsigned char *data;
 };
 
