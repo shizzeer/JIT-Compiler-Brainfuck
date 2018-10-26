@@ -3,8 +3,8 @@
 
 struct stack 
 {
-	int size_of_elements;
-	int elements[CAPACITY];
+    int size_of_elements;
+    int elements[CAPACITY];
 };
 
 void stack_push(struct stack *, int);
