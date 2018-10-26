@@ -5,8 +5,8 @@
 
 struct vec
 {
-    unsigned int size;	// index
-	unsigned int capacity;
+    unsigned int size;  // index
+    unsigned int capacity;
     char *data;
 };
 
@@ -16,7 +16,7 @@ void vector_alloc(struct vec *vector)
     vector->capacity = 100;
     vector->data = (char *)malloc(vector->capacity * sizeof(char));
 
-	assert(vector->data != NULL);
+    assert(vector->data != NULL);
 }
 
 void vector_delete(struct vec *vector)
@@ -24,8 +24,8 @@ void vector_delete(struct vec *vector)
     assert(vector != NULL || vector->data != NULL);
 
     vector->size = 0;
-	vector->capacity = 0;
-	free(vector->data);
+    vector->capacity = 0;
+    free(vector->data);
 }
 
 void vector_push_back(struct vec *vector, char *bytes, int size_of_bytes)
@@ -34,12 +34,12 @@ void vector_push_back(struct vec *vector, char *bytes, int size_of_bytes)
     {
         vector->capacity *= 2;
         vector->data = (char *)realloc(vector->data, vector->capacity * sizeof(char));
-		
-		assert(vector->data != NULL);
+        
+        assert(vector->data != NULL);
     }
    
     memcpy(vector->data + vector->size, bytes, size_of_bytes);
-	vector->size += size_of_bytes;
+    vector->size += size_of_bytes;
 }
 
 void vector_jmp_update(struct vec *vector, unsigned int instruction_offset, int jmp_offset)
